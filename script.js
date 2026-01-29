@@ -1,5 +1,3 @@
-const statusBar = document.getElementById("status-bar");
-
 const elCountdown1 = document.getElementById("countdown");
 const elCountdown2 = document.getElementById("countdown2");
 
@@ -9,8 +7,17 @@ const elViewers2 = document.getElementById("liveViewers2");
 const elHappy1 = document.getElementById("happyCustomers");
 const elHappy2 = document.getElementById("happyCustomers2");
 
+/* also update the duplicate copy */
+const elViewers2b = document.getElementById("liveViewers2b");
+const elHappy2b = document.getElementById("happyCustomers2b");
+const elCountdown2b = document.getElementById("countdown2b");
+
+const elViewers2c = document.getElementById("liveViewers2c");
+const elHappy2c = document.getElementById("happyCustomers2c");
+const elCountdown2c = document.getElementById("countdown2c");
+
 let viewers = parseInt(elViewers1?.textContent || "93", 10);
-let happy = parseInt(elHappy1?.textContent || "10520", 10);
+let happy = parseInt((elHappy1?.textContent || "10520").replace(/,/g, ""), 10);
 
 let countdownSeconds = 5 * 60 + 8;
 
@@ -23,16 +30,24 @@ function formatMMSS(totalSeconds) {
 function setCountdownText(text) {
   if (elCountdown1) elCountdown1.textContent = text;
   if (elCountdown2) elCountdown2.textContent = text;
+  if (elCountdown2b) elCountdown2b.textContent = text;
+  if (elCountdown2c) elCountdown2c.textContent = text;
 }
 
 function setViewersText(val) {
-  if (elViewers1) elViewers1.textContent = String(val);
-  if (elViewers2) elViewers2.textContent = String(val);
+  const str = String(val);
+  if (elViewers1) elViewers1.textContent = str;
+  if (elViewers2) elViewers2.textContent = str;
+  if (elViewers2b) elViewers2b.textContent = str;
+  if (elViewers2c) elViewers2c.textContent = str;
 }
 
 function setHappyText(val) {
-  if (elHappy1) elHappy1.textContent = String(val);
-  if (elHappy2) elHappy2.textContent = String(val);
+  const str = val.toLocaleString();
+  if (elHappy1) elHappy1.textContent = str;
+  if (elHappy2) elHappy2.textContent = str;
+  if (elHappy2b) elHappy2b.textContent = str;
+  if (elHappy2c) elHappy2c.textContent = str;
 }
 
 function tickCountdown() {
@@ -60,9 +75,3 @@ function tickLiveStats() {
 tickCountdown();
 setInterval(tickCountdown, 1000);
 setInterval(tickLiveStats, 2500);
-
-window.addEventListener("scroll", () => {
-  if (!statusBar) return;
-  if (window.scrollY > 40) statusBar.classList.add("hide-status-bar");
-  else statusBar.classList.remove("hide-status-bar");
-});
