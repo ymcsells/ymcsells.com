@@ -30,6 +30,13 @@
         <div class="status-sep">|</div>
 
         <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="checkingOut">9</span> checking out
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
           Price increasing in:
           <span class="chip" id="countdown">05:10</span>
         </div>
@@ -56,6 +63,13 @@
         <div class="status-item">
           <span class="dot"></span>
           <span id="liveViewers2">93</span> live viewers
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="checkingOut2">9</span> checking out
         </div>
 
         <div class="status-sep">|</div>
@@ -94,6 +108,13 @@
         <div class="status-sep">|</div>
 
         <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="checkingOut2b">9</span> checking out
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
           Price increasing in:
           <span class="chip" id="countdown2b">05:10</span>
         </div>
@@ -120,6 +141,13 @@
         <div class="status-item">
           <span class="dot"></span>
           <span id="liveViewers2c">93</span> live viewers
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="checkingOut2c">9</span> checking out
         </div>
 
         <div class="status-sep">|</div>
@@ -169,32 +197,31 @@
 
 <section class="section" id="products">
   <div class="section-inner">
-
     <div class="section-title-row">
       <h2 class="section-title">Suppliers</h2>
-      <p class="section-sub">Tap any card to view details later</p>
+      <p class="section-sub section-sub-under">Tap any card to view details</p>
     </div>
 
     <div class="products-wrap">
 
-      <div class="product-card">
+      <div class="product-card" data-product="bundle">
         <div class="image-wrap">
           <img src="13.png" alt="Elite All Supplier Bundle">
         </div>
         <div class="card-body">
           <div class="badge">Best deal</div>
-          <h3 class="product-title">Elite All Supplier Bundle</h3>
+          <h3 class="product-title">Elite Supplier Bundle</h3>
           <p class="product-meta">Everything included</p>
           <div class="price-row">
             <span class="old-price">$99.99</span>
             <span class="new-price">$29.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/28EfZgcnK76sdSb46V0gw0d" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite All Supplier Bundle">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="clothing">
         <div class="image-wrap">
           <img src="4.png" alt="Elite Clothing Supplier">
         </div>
@@ -205,12 +232,12 @@
             <span class="old-price">$29.99</span>
             <span class="new-price">$19.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/28E00i2Na1M8g0jgTH0gw0c" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Clothing Supplier">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="ape">
         <div class="image-wrap">
           <img src="5.png" alt="Ape Supplier">
         </div>
@@ -221,14 +248,14 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$9.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/00w4gy3Re3Ug4hB9rf0gw0b" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Ape Supplier">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="ssentials">
         <div class="image-wrap">
-          <img src="6.png" alt="ssentials Supplier">
+          <img src="6.png" alt="Ssentials Supplier">
         </div>
         <div class="card-body">
           <h3 class="product-title">Ssentials Supplier</h3>
@@ -237,12 +264,12 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$9.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/fZu28q5Zm4YkbK3avj0gw0a" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Ssentials Supplier">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="cologne_r">
         <div class="image-wrap">
           <img src="2.png" alt="Elite Cologne Supplier">
         </div>
@@ -253,14 +280,14 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$14.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/7sYcN4fzW76s29t5aZ0gw09" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Cologne Supplier">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="cologne_nr">
         <div class="image-wrap">
-          <img src="15.png" alt="Elite Cologne Supplier">
+          <img src="15.png" alt="Elite Cologne Supplier (without receipts)">
         </div>
         <div class="card-body">
           <h3 class="product-title">Elite Cologne Supplier (without receipts)</h3>
@@ -269,12 +296,12 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$9.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/6oU28q4Vi2Qc9BVgTH0gw08" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Cologne Supplier (without receipts)">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="electronics_r">
         <div class="image-wrap">
           <img src="3.png" alt="Electronics Supplier">
         </div>
@@ -285,14 +312,14 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$14.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/28EcN45Zm8awdSb32R0gw07" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Electronics Supplier">Details</a>
         </div>
       </div>
 
-       <div class="product-card">
+      <div class="product-card" data-product="electronics_nr">
         <div class="image-wrap">
-          <img src="16.png" alt="Electronics Supplier">
+          <img src="16.png" alt="Electronics Supplier (without receipts)">
         </div>
         <div class="card-body">
           <h3 class="product-title">Electronics Supplier (without the reciepts)</h3>
@@ -301,12 +328,12 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$9.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/28E7sKdrO0I4cO76f30gw06" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Electronics Supplier (without the reciepts)">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="golf">
         <div class="image-wrap">
           <img src="10.png" alt="Golf Clubs Supplier">
         </div>
@@ -317,12 +344,12 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$9.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/7sYfZg5ZmduQ01l0UJ0gw05" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Golf Clubs Supplier">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="pickleball">
         <div class="image-wrap">
           <img src="12.png" alt="Oola Pickleball Supplier">
         </div>
@@ -333,12 +360,12 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$9.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/00w8wO73q76s5lF0UJ0gw03" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Oola Pickleball Supplier">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="glasses">
         <div class="image-wrap">
           <img src="8.png" alt="Elite Glasses Supplier">
         </div>
@@ -349,12 +376,12 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$5.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/5kQaEW87u76sbK346V0gw02" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Glasses Supplier">Details</a>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-product="mask">
         <div class="image-wrap">
           <img src="9.png" alt="Elite Mask Supplier">
         </div>
@@ -365,8 +392,24 @@
             <span class="old-price">$19.99</span>
             <span class="new-price">$5.99</span>
           </div>
-          <a class="btn btn-primary btn-full" href="#">Buy now soon</a>
-          <a class="btn btn-ghost btn-full" href="#">Details</a>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/3cIaEW5Zm62o29t8nb0gw01" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Mask Supplier">Details</a>
+        </div>
+      </div>
+
+      <div class="product-card center-row" data-product="playbook">
+        <div class="image-wrap">
+          <img src="1.png" alt="Reselling Playbook">
+        </div>
+        <div class="card-body">
+          <h3 class="product-title">Reselling Playbook</h3>
+          <p class="product-meta">Reselling Guide</p>
+          <div class="price-row">
+            <span class="old-price">$19.99</span>
+            <span class="new-price">$5.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/cNi4gy3Re3Ug7tN46V0gw00" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Reselling Playbook">Details</a>
         </div>
       </div>
 
@@ -378,7 +421,7 @@
   <div class="section-inner">
     <div class="section-title-row">
       <h2 class="section-title">Frequently asked questions</h2>
-      <p class="section-sub">Digital delivery and access info</p>
+      <p class="section-sub section-sub-under">Digital delivery and access info</p>
     </div>
 
     <div class="faq">
@@ -415,9 +458,71 @@
   </div>
 </section>
 
-<script src="script.js"></script>
+<div class="product-overlay" id="productOverlay" aria-hidden="true">
+  <div class="product-modal" role="dialog" aria-modal="true">
+    <button class="product-close" id="productClose" type="button" aria-label="Close">×</button>
 
-<span id="countdown-timer"></span>
+    <div class="product-shell">
+      <div class="product-left">
+        <div class="product-media">
+          <img id="pImg" src="" alt="">
+        </div>
+      </div>
+
+      <div class="product-right">
+        <div class="product-brand" id="pBrand">ymcsells</div>
+        <div class="product-title-big" id="pTitle">Title</div>
+
+        <div class="product-price-line">
+          <span class="product-old" id="pOld">$0.00</span>
+          <span class="product-new" id="pNew">$0.00</span>
+          <span class="product-sale" id="pSale" style="display:none;">Sale</span>
+        </div>
+
+        <div class="product-mini" id="pMini">Instant access • Digital only</div>
+
+        <div class="qty-row">
+          <div class="qty-label">Quantity</div>
+          <div class="qty-control">
+            <button class="qty-btn" id="qtyMinus" type="button">−</button>
+            <div class="qty-val" id="qtyVal">1</div>
+            <button class="qty-btn" id="qtyPlus" type="button">+</button>
+          </div>
+        </div>
+
+        <button class="btn btn-dark btn-full" id="addToCartBtn" type="button">Add to cart</button>
+        <a class="btn btn-primary btn-full" id="buyNowBtn" href="#">Buy now</a>
+
+        <div class="product-underbuy">
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text" id="pReviews">291 Five Star Reviews</span>
+          </div>
+
+          <div class="product-pill">
+            🔥 SAVE 50% — LIMITED TIME!
+          </div>
+        </div>
+
+        <div class="product-trust">
+          <div class="trust-item">✅ Instant Access — sent to your email immediately after purchase</div>
+          <div class="trust-item">✅ Verified Suppliers — trusted plugs for resellers</div>
+          <div class="trust-item">✅ Support — if you need help, you can reach out</div>
+        </div>
+
+        <div class="product-desc" id="pDesc">
+          Description goes here.
+        </div>
+
+        <div class="product-actions-bottom">
+          <button class="btn btn-ghost btn-full" id="productClose2" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 
 <div class="mobile-cta">
   <a class="mobile-cta-btn" href="#products">Get access</a>
