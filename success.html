@@ -4,99 +4,429 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Payment Successful | ymcsells</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    .success-wrap {
-      min-height: calc(100vh - 44px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 18px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #05070c;
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
-    .success-card {
-      width: min(720px, 100%);
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(1100px 600px at 50% 20%, rgba(76,141,255,0.20), transparent 60%),
+        radial-gradient(900px 520px at 20% 80%, rgba(245,200,75,0.10), transparent 60%),
+        radial-gradient(900px 520px at 80% 80%, rgba(255,92,92,0.10), transparent 60%),
+        rgba(5,7,12,1);
+      z-index: -2;
+    }
+
+    .grain {
+      position: fixed;
+      inset: -50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+      opacity: 0.08;
+      transform: rotate(8deg);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .wrap {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 22px 16px;
+    }
+
+    .card {
+      width: min(760px, 100%);
+      border-radius: 22px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 22px;
-      text-align: center;
+      box-shadow: 0 30px 100px rgba(0,0,0,0.55);
+      overflow: hidden;
     }
-    .success-kicker {
-      font-size: 12px;
-      letter-spacing: 3px;
+
+    .top {
+      padding: 18px 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
       font-weight: 800;
+      letter-spacing: 3px;
+      font-size: 12px;
       color: rgba(255,255,255,0.55);
       text-transform: uppercase;
     }
-    .success-title {
-      margin-top: 10px;
-      font-size: 36px;
-      line-height: 1.05;
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(76,141,255,0.10);
+      border: 1px solid rgba(76,141,255,0.22);
+      color: #b7d0ff;
       font-weight: 800;
+      font-size: 12px;
+      white-space: nowrap;
     }
-    .success-sub {
-      margin: 12px auto 0;
-      opacity: 0.8;
-      max-width: 560px;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-    .success-box {
-      margin-top: 14px;
-      padding: 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      text-align: left;
+
+    .check {
+      width: 18px;
+      height: 18px;
+      border-radius: 6px;
+      background: #2fd081;
+      display: inline-grid;
+      place-items: center;
+      color: #0b1a10;
+      font-weight: 900;
       font-size: 13px;
-      line-height: 1.55;
-      opacity: 0.95;
+      box-shadow: 0 10px 25px rgba(47,208,129,0.25);
     }
-    .success-actions {
+
+    .content {
+      padding: 14px 18px 18px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 10px;
+      font-size: 40px;
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .sub {
+      margin: 10px auto 0;
+      max-width: 560px;
+      opacity: 0.78;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .grid {
       margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px;
+      text-align: left;
+    }
+
+    .panel h3 {
+      font-size: 13px;
+      font-weight: 800;
+      opacity: 0.95;
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+    }
+
+    .bullets {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      font-size: 13px;
+      line-height: 1.45;
+      opacity: 0.9;
+    }
+
+    .bullets li {
       display: flex;
       gap: 10px;
-      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .dot {
+      margin-top: 5px;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(76,141,255,0.9);
+      flex: 0 0 auto;
+      box-shadow: 0 10px 30px rgba(76,141,255,0.22);
+    }
+
+    .dot.gold { background: rgba(245,200,75,0.95); box-shadow: 0 10px 30px rgba(245,200,75,0.18); }
+    .dot.green { background: rgba(47,208,129,0.95); box-shadow: 0 10px 30px rgba(47,208,129,0.18); }
+
+    .upsell {
+      margin-top: 12px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgba(255,92,92,0.18), rgba(76,141,255,0.12));
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 14px;
+      text-align: left;
+    }
+
+    .upsell-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
       flex-wrap: wrap;
     }
-    .small-note {
-      margin-top: 10px;
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.20);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 800;
       font-size: 12px;
-      opacity: 0.65;
+      color: rgba(255,255,255,0.92);
     }
-    @media (max-width: 768px) {
-      .success-title { font-size: 28px; }
+
+    .tag strong { color: #fff; }
+    .tag .spark { filter: drop-shadow(0 12px 26px rgba(245,200,75,0.25)); }
+
+    .upsell h2 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-top: 10px;
+    }
+
+    .upsell p {
+      margin-top: 6px;
+      opacity: 0.85;
+      font-size: 13px;
+      line-height: 1.45;
+      max-width: 620px;
+    }
+
+    .btnrow {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 14px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      width: 100%;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.15s ease, background 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .btn:active { transform: scale(0.99); }
+
+    .btn-primary {
+      background: linear-gradient(90deg, rgba(91,151,255,0.95), rgba(54,114,230,0.95));
+      color: #fff;
+      border: 1px solid rgba(76,141,255,0.25);
+      box-shadow: 0 14px 40px rgba(76,141,255,0.18);
+    }
+
+    .btn-primary:hover { background: linear-gradient(90deg, rgba(91,151,255,1), rgba(54,114,230,1)); }
+
+    .btn-dark {
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .btn-dark:hover { background: rgba(255,255,255,0.08); }
+
+    .btn-ghost {
+      background: transparent;
+      color: #8fb5ff;
+      border: 1px solid rgba(76,141,255,0.20);
+    }
+
+    .btn-ghost:hover { background: rgba(76,141,255,0.10); }
+
+    .fine {
+      margin-top: 12px;
+      font-size: 12px;
+      opacity: 0.55;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .divider {
+      margin: 12px 0 0;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .footer {
+      padding: 14px 18px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      opacity: 0.8;
+      font-size: 12px;
+    }
+
+    .footer a {
+      color: #8fb5ff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 720px) {
+      h1 { font-size: 32px; }
+      .grid { grid-template-columns: 1fr; }
+      .btnrow { grid-template-columns: 1fr; }
+      .top { padding: 16px 16px 0; }
+      .content { padding: 12px 16px 16px; }
+      .footer { padding: 12px 16px 16px; }
     }
   </style>
 </head>
+
 <body>
+  <div class="bg"></div>
+  <div class="grain"></div>
 
-  <!-- Keeps your site consistent with the same top padding -->
-  <div class="success-wrap">
-    <div class="success-card">
-      <div class="success-kicker">YM C SELLS</div>
-      <div class="success-title">Payment successful ✅</div>
-      <p class="success-sub">
-        Your access is being delivered right now. Check your email for the supplier info / playbook.
-      </p>
-
-      <div class="success-box">
-        <strong>What happens next:</strong><br />
-        • Delivery is sent to the email you used at checkout.<br />
-        • If you don’t see it, check spam/promotions.<br />
-        • Still nothing after a few minutes? Contact support.
+  <main class="wrap">
+    <section class="card" role="region" aria-label="Payment confirmation">
+      <div class="top">
+        <div class="brand">ymcsells</div>
+        <div class="pill"><span class="check">✓</span> Payment successful</div>
       </div>
 
-      <div class="success-actions">
-        <a class="btn btn-primary" href="index.html#products">Back to products</a>
-        <a class="btn btn-dark" href="index.html#faq">View FAQ</a>
+      <div class="content">
+        <h1>You're all set ✅</h1>
+        <p class="sub">
+          Your purchase is confirmed. Your access has been sent instantly to the email you entered at checkout.
+          If you don’t see it within <strong>2–3 minutes</strong>, follow the quick steps below.
+        </p>
+
+        <div class="grid">
+          <div class="panel">
+            <h3>What happens next</h3>
+            <ul class="bullets">
+              <li><span class="dot green"></span><span>Delivery is sent to the email you used at checkout.</span></li>
+              <li><span class="dot"></span><span>Check <strong>Spam</strong> and <strong>Promotions</strong> folders.</span></li>
+              <li><span class="dot gold"></span><span>Search your inbox for <strong>“ymcsells”</strong> or <strong>“Stripe”</strong>.</span></li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>If you still don’t see it</h3>
+            <ul class="bullets">
+              <li><span class="dot"></span><span>Wait 2–3 minutes (email can lag slightly).</span></li>
+              <li><span class="dot gold"></span><span>Make sure the email address was typed correctly.</span></li>
+              <li><span class="dot green"></span><span>Contact support and include your checkout email.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="upsell" id="upsellBox">
+          <div class="upsell-top">
+            <div class="tag"><span class="spark">🔥</span> Launch special: <strong>33% off</strong> bundle</div>
+            <div class="tag">Limited time</div>
+          </div>
+          <h2>Upgrade and unlock the full Elite Supplier Bundle</h2>
+          <p>
+            If you want the biggest variety + best deal, grab the bundle while the launch discount is active.
+            Instant delivery — same email.
+          </p>
+
+          <div class="btnrow">
+            <a class="btn btn-primary" id="bundleBtn"
+               href="https://buy.stripe.com/28EfZgcnK76sdSb46V0gw0d"
+               target="_blank" rel="noopener">
+              Get the Bundle
+            </a>
+
+            <!-- ✅ Discord support link (replace invite) -->
+            <a class="btn btn-dark" id="supportBtn"
+               href="https://discord.gg/EaWVTeTEb9"
+               target="_blank" rel="noopener">
+              Contact support
+            </a>
+          </div>
+        </div>
+
+        <div class="btnrow" style="margin-top:12px;">
+          <a class="btn btn-ghost" href="/#products">Back to products</a>
+          <a class="btn btn-ghost" href="/#faq">View FAQ</a>
+        </div>
+
+        <p class="fine">
+          Tip: screenshot this page if you need to follow up.
+        </p>
       </div>
 
-      <div class="small-note">
-        Tip: screenshot this page if you need to follow up.
-      </div>
-    </div>
-  </div>
+      <div class="divider"></div>
 
+      <div class="footer">
+        <div>© <span id="yr"></span> ymcsells • Digital products only</div>
+        <div>
+          <a href="/#products">Shop</a>
+          &nbsp;•&nbsp;
+          <a href="/#faq">FAQ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    // ✅ MOBILE FIX: force redirect on tap for both buttons
+    const bundleBtn = document.getElementById("bundleBtn");
+    const supportBtn = document.getElementById("supportBtn");
+
+    function forceGo(el){
+      if(!el) return;
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = el.getAttribute("href");
+        if (!url) return;
+        if (el.getAttribute("target") === "_blank") {
+          window.open(url, "_blank", "noopener");
+        } else {
+          window.location.href = url;
+        }
+      }, { passive: false });
+    }
+
+    forceGo(bundleBtn);
+    forceGo(supportBtn);
+
+    // OPTIONAL: hide upsell box quickly
+    // document.getElementById("upsellBox").style.display = "none";
+  </script>
 </body>
 </html>
