@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Successful | ymcsells</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .success-wrap {
+      min-height: calc(100vh - 44px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 18px;
+    }
+    .success-card {
+      width: min(720px, 100%);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+    }
+    .success-kicker {
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+    }
+    .success-title {
+      margin-top: 10px;
+      font-size: 36px;
+      line-height: 1.05;
+      font-weight: 800;
+    }
+    .success-sub {
+      margin: 12px auto 0;
+      opacity: 0.8;
+      max-width: 560px;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    .success-box {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.55;
+      opacity: 0.95;
+    }
+    .success-actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .small-note {
+      margin-top: 10px;
+      font-size: 12px;
+      opacity: 0.65;
+    }
+    @media (max-width: 768px) {
+      .success-title { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Keeps your site consistent with the same top padding -->
+  <div class="success-wrap">
+    <div class="success-card">
+      <div class="success-kicker">YM C SELLS</div>
+      <div class="success-title">Payment successful ✅</div>
+      <p class="success-sub">
+        Your access is being delivered right now. Check your email for the supplier info / playbook.
+      </p>
+
+      <div class="success-box">
+        <strong>What happens next:</strong><br />
+        • Delivery is sent to the email you used at checkout.<br />
+        • If you don’t see it, check spam/promotions.<br />
+        • Still nothing after a few minutes? Contact support.
+      </div>
+
+      <div class="success-actions">
+        <a class="btn btn-primary" href="index.html#products">Back to products</a>
+        <a class="btn btn-dark" href="index.html#faq">View FAQ</a>
+      </div>
+
+      <div class="small-note">
+        Tip: screenshot this page if you need to follow up.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
