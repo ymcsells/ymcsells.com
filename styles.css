@@ -296,6 +296,27 @@ body {
 
 .product-card.center-row { margin-left: auto; margin-right: auto; }
 
+/* Align prices and buttons within each desktop product row. */
+@media (min-width: 769px) {
+  .products-wrap > .product-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .products-wrap > .product-card > .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .products-wrap > .product-card .badge { align-self: center; }
+
+  .products-wrap > .product-card .price-row {
+    margin-top: auto;
+    padding-top: 10px;
+  }
+}
+
 /* --- FAQ --- */
 .faq {
   display: flex;
@@ -397,13 +418,14 @@ body {
 
   .btn { padding: 11px 12px; font-size: 13px; }
 
-  /* ✅ FIX: playbook was bigger because this used min(320px, 100%).
-     Now it matches ONE normal grid card width, and stays centered. */
+  /* Keep the playbook in a normal grid cell beside the mask supplier. */
   .product-card.center-row {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc((100% - 14px) / 2);
-    max-width: calc((100% - 14px) / 2);
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   /* ✅ Mobile FAQ sizing (actual classes you use) */
