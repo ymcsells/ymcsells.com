@@ -128,16 +128,16 @@ const PRODUCT_DATA = {
     oldPrice: "$99.99 USD",
     newPrice: "$29.99 USD",
     sale: true,
-    desc: "Includes multiple supplier plugs in one. Perfect if you want the biggest variety and the best deal.",
+    desc: "Includes all my personal vendors in one. Perfect if you want the biggest variety and the best deal.",
     reviews: "291 Five Star Reviews"
   },
   clothing: {
     brand: "ymcsells",
-    title: "Elite Clothing Supplier",
+    title: "Elite Clothing Suppliers",
     oldPrice: "$29.99 USD",
     newPrice: "$19.99 USD",
     sale: true,
-    desc: "Clothing sets and basics supplier plug. Great margins and always in demand.",
+    desc: "Clothing suppliers. Great margins and always in demand.",
     reviews: "217 Five Star Reviews"
   },
   ape: {
@@ -205,11 +205,11 @@ const PRODUCT_DATA = {
   },
   pickleball: {
     brand: "ymcsells",
-    title: "Oola Pickleball Supplier",
+    title: "Elite Shoe Supplier",
     oldPrice: "$19.99 USD",
-    newPrice: "$9.99 USD",
+    newPrice: "$14.99 USD",
     sale: true,
-    desc: "Sports gear supplier. Unique niche with loyal buyers.",
+    desc: "Shoe supplier. Unique niche with loyal buyers.",
     reviews: "119 Five Star Reviews"
   },
   glasses: {
