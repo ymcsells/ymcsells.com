@@ -1,677 +1,452 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: Inter;
-  background: #05070c;
-  color: #ffffff;
-  padding-top: 44px;
-  overflow-x: hidden;
-}
-
-/* --- STATUS BAR --- */
-.status-bar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 44px;
-  z-index: 9999;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(90deg, rgba(80, 140, 255, 0.95), #05080fe6);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.078);
-}
-
-.status-marquee { width: 100%; overflow: hidden; }
-
-.status-track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-  animation: marqueeScroll 32s linear infinite;
-}
-
-.status-content {
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-  gap: 18px;
-  padding-right: 40px;
-}
-
-@keyframes marqueeScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.status-item { font-size: 15px; opacity: 0.95; }
-.status-sep { opacity: 0.25; }
-
-.stars {
-  margin-left: 8px;
-  color: #f5c84b;
-  letter-spacing: 1px;
-}
-
-.chip {
-  display: inline-block;
-  margin-left: 8px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: #b31616;
-  color: #fff;
-  font-weight: 800;
-  font-size: 12px;
-}
-
-.dot {
-  display: inline-block;
-  width: 6px; height: 6px;
-  border-radius: 999px;
-  background: #4c8dff;
-  margin-right: 8px;
-}
-
-.dot.gold { background: #f5c84b; }
-
-/* --- TOP BAR --- */
-.topbar {
-  position: sticky;
-  top: 44px;
-  z-index: 10;
-  background: rgba(5 7 12 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255 255 255 0.06);
-}
-
-.topbar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.brand { font-weight: 800; letter-spacing: 1px; }
-
-.topbar-right {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.pill {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(255 255 255 0.06);
-  border: 1px solid rgba(255 255 255 0.06);
-  font-size: 12px;
-  opacity: 0.9;
-}
-
-/* --- HERO --- */
-.title {
-  position: relative;
-  padding: 140px 18px 120px;
-  background:
-    linear-gradient(to bottom,
-      rgba(5, 7, 12, 0.95) 0%,
-      rgba(5, 7, 12, 0.75) 40%,
-      rgba(5, 7, 12, 0.95) 100%
-    ),
-    url("14.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 18px;
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-
-.hero-copy {
-  flex: 1;
-  min-width: 280px;
-  padding: 22px;
-  border-radius: 18px;
-  background: rgba(255 255 255 0.03);
-  border: 1px solid rgba(255 255 255 0.06);
-  text-align: center;
-}
-
-.hero-kicker {
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: #4c8dff;
-  font-weight: 800;
-}
-
-.hero-title {
-  font-size: 50px;
-  line-height: 1.05;
-  font-weight: 800;
-  text-align: center;
-  margin-top: 14px;
-}
-
-.hero-sub {
-  margin: 18px auto 0 auto;
-  opacity: 0.75;
-  max-width: 560px;
-  text-align: center;
-}
-
-.hero-actions {
-  margin-top: 18px;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* --- SECTIONS --- */
-.section { padding: 30px 18px; }
-.section-inner { max-width: 1200px; margin: 0 auto; }
-
-.section-title-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.section-title { font-size: 22px; font-weight: 800; text-align: center; }
-.section-sub { opacity: 0.7; font-size: 13px; text-align: center; }
-
-/* --- PRODUCTS --- */
-.products-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-}
-
-.product-card {
-  width: 280px;
-  background: rgba(255 255 255 0.03);
-  border: 1px solid rgba(255 255 255 0.06);
-  border-radius: 18px;
-  padding: 14px;
-  transition: transform 0.2s ease;
-  text-align: center;
-  cursor: pointer;
-}
-
-.product-card:hover { transform: translateY(-6px); }
-
-.image-wrap {
-  width: 100%;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  background: #0b0d13;
-  overflow: hidden;
-}
-
-.image-wrap img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.card-body { padding-top: 12px; }
-
-.badge {
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(76 141 255 0.18);
-  border: 1px solid rgba(76 141 255 0.25);
-  color: #8fb5ff;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.product-title { margin-top: 10px; font-weight: 800; font-size: 16px; }
-.product-meta { margin-top: 6px; opacity: 0.7; font-size: 13px; }
-
-.price-row {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: baseline;
-}
-
-.old-price { opacity: 0.55; text-decoration: line-through; }
-.new-price { font-weight: 800; font-size: 18px; }
-
-/* --- BUTTONS --- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 12px 14px;
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 14px;
-  background: #4c8dff;
-  border: 1px solid rgba(76 141 255 0.25);
-  color: white;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.btn-primary:hover { background: #1b6cff; }
-
-.btn-ghost {
-  background: transparent;
-  color: #8fb5ff;
-}
-
-.btn-ghost:hover { background: rgba(76 141 255 0.1); }
-
-.btn-dark {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  color: #ffffff;
-}
-
-.btn-dark:hover { background: rgba(255,255,255,0.10); }
-
-.product-card.center-row { margin-left: auto; margin-right: auto; }
-
-/* Align prices and buttons within each desktop product row. */
-@media (min-width: 769px) {
-  .products-wrap > .product-card {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .products-wrap > .product-card > .card-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .products-wrap > .product-card .badge { align-self: center; }
-
-  .products-wrap > .product-card .price-row {
-    margin-top: auto;
-    padding-top: 10px;
-  }
-}
-
-/* --- FAQ --- */
-.faq {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.faq-item { margin-bottom: 12px; width: min(900px, 100%); }
-
-.faq-item summary {
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 23px;
-  background-color: #0b0d13;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 12px 14px;
-}
-
-.faq-item div.faq-body {
-  padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.03);
-  color: #ffffff;
-  border-radius: 16px;
-  margin-top: 8px;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-.faq-item summary:hover { background-color: #4c8dff; }
-
-.footer {
-  margin-top: 22px;
-  text-align: center;
-  opacity: 0.7;
-  font-size: 13px;
-}
-
-/* --- MOBILE CTA --- */
-.mobile-cta { display: none; }
-
-/* ✅ MOBILE (ONLY ONE MOBILE BLOCK — FIXED) */
-@media (max-width: 768px) {
-  .products-wrap {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-    align-items: stretch;
-  }
-
-  .product-card {
-    width: 100%;
-    padding: 12px;
-    border-radius: 16px;
-    transition: none;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .product-card:hover { transform: none; }
-
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .price-row { margin-top: auto; }
-
-  .image-wrap {
-    height: 140px;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 14px;
-  }
-
-  .image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 14px;
-    display: block;
-  }
-
-  /* ✅ PLAYBOOK: keep same look as other cards */
-  .product-card[data-product="playbook"] .image-wrap {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-  .product-card[data-product="playbook"] .image-wrap img {
-    object-fit: cover;
-    padding: 0;
-  }
-
-  .product-title { font-size: 15px; line-height: 1.15; }
-  .product-meta { font-size: 12px; }
-
-  .btn { padding: 11px 12px; font-size: 13px; }
-
-  /* Keep the playbook in a normal grid cell beside the mask supplier. */
-  .product-card.center-row {
-    grid-column: auto;
-    justify-self: stretch;
-    width: 100%;
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* ✅ Mobile FAQ sizing (actual classes you use) */
-  .faq-item summary {
-    font-size: 16px;
-    padding: 12px 12px;
-    border-radius: 12px;
-  }
-
-  .faq-item div.faq-body {
-    font-size: 13px;
-    padding: 10px 12px;
-    border-radius: 14px;
-  }
-
-  .mobile-cta {
-    display: block;
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    padding: 12px 14px;
-    z-index: 9999;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .mobile-cta-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 14px 16px;
-    border-radius: 999px;
-    font-weight: 700;
-    text-decoration: none;
-    color: #ffffff;
-    background: linear-gradient(90deg, rgba(91, 151, 255, 0.95), rgba(54, 114, 230, 0.95));
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  }
-
-  body { padding-bottom: 86px; }
-}
-
-/* ========================= */
-/* FULLSCREEN SHOPIFY MODAL */
-/* ========================= */
-.product-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.72);
-  backdrop-filter: blur(14px);
-  display: none;
-  z-index: 10000;
-}
-
-.product-overlay.open { display: block; }
-
-.product-modal {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(1200px 600px at 50% 20%, rgba(76,141,255,0.12), transparent 60%),
-              rgba(6, 9, 15, 0.96);
-  overflow: auto;
-}
-
-.product-close {
-  position: fixed;
-  top: 20px;
-  right: 22px;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-  font-size: 24px;
-  font-weight: 800;
-  cursor: pointer;
-  z-index: 10001;
-}
-
-.product-close:hover { background: rgba(255,255,255,0.12); }
-
-.product-shell {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 90px 18px 40px;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 26px;
-  align-items: start;
-}
-
-.product-media {
-  width: 100%;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  overflow: hidden;
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.product-right { padding-top: 4px; }
-
-.product-brand {
-  font-size: 12px;
-  letter-spacing: 3px;
-  font-weight: 800;
-  color: rgba(255,255,255,0.55);
-  text-transform: uppercase;
-}
-
-.product-title-big {
-  font-size: 48px;
-  line-height: 1.05;
-  font-weight: 800;
-  margin-top: 10px;
-}
-
-.product-price-line {
-  margin-top: 14px;
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.product-old { opacity: 0.5; text-decoration: line-through; }
-.product-new { font-size: 22px; font-weight: 800; }
-
-.product-sale {
-  font-size: 12px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.10);
-}
-
-.product-mini {
-  margin-top: 10px;
-  opacity: 0.75;
-  font-size: 13px;
-}
-
-.qty-row {
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.qty-label { opacity: 0.85; font-weight: 600; }
-
-.qty-control {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.04);
-}
-
-.qty-btn {
-  width: 44px;
-  height: 42px;
-  border: 0;
-  background: transparent;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.qty-btn:hover { background: rgba(255,255,255,0.08); }
-
-.qty-val {
-  width: 54px;
-  text-align: center;
-  font-weight: 800;
-}
-
-.product-rating {
-  margin-top: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  opacity: 0.9;
-}
-
-.rating-text { opacity: 0.8; font-size: 13px; }
-
-.product-pill {
-  margin-top: 12px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255, 92, 92, 0.25), rgba(76, 141, 255, 0.18));
-  border: 1px solid rgba(255,255,255,0.10);
-  font-weight: 800;
-  font-size: 13px;
-}
-
-.product-trust {
-  margin-top: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  opacity: 0.95;
-}
-
-.trust-item {
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  line-height: 1.4;
-  font-size: 13px;
-}
-
-.product-desc {
-  margin-top: 14px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  opacity: 0.9;
-  line-height: 1.55;
-}
-
-.product-actions-bottom { margin-top: 14px; }
-
-@media (max-width: 920px) {
-  .product-shell {
-    grid-template-columns: 1fr;
-    padding-top: 84px;
-  }
-  .product-title-big { font-size: 36px; }
-  .product-media { min-height: 360px; }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Suppliers</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="status-bar" class="status-bar">
+  <div class="status-marquee">
+    <div class="status-track">
+      <div class="status-content">
+        <div class="status-item">Best Suppliers In The Game</div>
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          Rated <strong>4.98/5</strong>
+          <span class="stars">★★★★★</span>
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot"></span>
+          <span id="liveViewers">93</span> live viewers
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="checkingOut">9</span> checking out
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          Price increasing in:
+          <span class="chip" id="countdown">05:10</span>
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="happyCustomers">1,762</span> happy customers
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">Best Suppliers In The Game</div>
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          Rated <strong>4.98/5</strong>
+          <span class="stars">★★★★★</span>
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot"></span>
+          <span id="liveViewers2">93</span> live viewers
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="checkingOut2">9</span> checking out
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          Price increasing in:
+          <span class="chip" id="countdown2">05:10</span>
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="happyCustomers2">1,762</span> happy customers
+        </div>
+
+        <div class="status-sep">|</div>
+      </div>
+
+      <div class="status-content" aria-hidden="true">
+        <div class="status-item">Best Suppliers In The Game</div>
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          Rated <strong>4.98/5</strong>
+          <span class="stars">★★★★★</span>
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot"></span>
+          <span id="liveViewers2b">93</span> live viewers
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="checkingOut2b">9</span> checking out
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          Price increasing in:
+          <span class="chip" id="countdown2b">05:10</span>
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="happyCustomers2b">1,762</span> happy customers
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">Best Suppliers In The Game</div>
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          Rated <strong>4.98/5</strong>
+          <span class="stars">★★★★★</span>
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot"></span>
+          <span id="liveViewers2c">93</span> live viewers
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="checkingOut2c">9</span> checking out
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          Price increasing in:
+          <span class="chip" id="countdown2c">05:10</span>
+        </div>
+
+        <div class="status-sep">|</div>
+
+        <div class="status-item">
+          <span class="dot gold"></span>
+          <span id="happyCustomers2c">1,762</span> happy customers
+        </div>
+
+        <div class="status-sep">|</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">ymcsells</div>
+    <div class="topbar-right">
+      <div class="pill">Digital only</div>
+      <div class="pill">Instant delivery</div>
+    </div>
+  </div>
+</header>
+
+<section class="title">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-kicker">ACCESS THE EXACT SUPPLIERS THAT HELP ME SCALE</div>
+      <h1 class="hero-title">Start Printing Today!</h1>
+      <p class="hero-sub">Get access to elite suppliers across clothing luxury electronics and more</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#products">Get access</a>
+        <a class="btn btn-ghost" href="#faq">View FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="section-inner">
+    <div class="section-title-row">
+      <h2 class="section-title">Suppliers</h2>
+      <p class="section-sub section-sub-under">Tap any card to view details</p>
+    </div>
+
+    <div class="products-wrap">
+
+      <div class="product-card" data-product="bundle">
+        <div class="image-wrap">
+          <img src="13.png" alt="Elite All Supplier Bundle">
+        </div>
+        <div class="card-body">
+          <div class="badge">Best deal</div>
+          <h3 class="product-title">Elite Supplier Bundle</h3>
+          <p class="product-meta">Everything included</p>
+          <div class="price-row">
+            <span class="old-price">$99.99</span>
+            <span class="new-price">$29.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/28EfZgcnK76sdSb46V0gw0d" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite All Supplier Bundle">Details</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-product="clothing">
+        <div class="image-wrap">
+          <img src="4.png" alt="Elite Clothing Supplier">
+        </div>
+        <div class="card-body">
+          <h3 class="product-title">Elite Clothing Supplier</h3>
+          <p class="product-meta">Clothing Suppliers</p>
+          <div class="price-row">
+            <span class="old-price">$29.99</span>
+            <span class="new-price">$19.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/28E00i2Na1M8g0jgTH0gw0c" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Clothing Supplier">Details</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-product="cologne_r">
+        <div class="image-wrap">
+          <img src="2.png" alt="Elite Cologne Supplier">
+        </div>
+        <div class="card-body">
+          <h3 class="product-title">Elite Cologne Supplier</h3>
+          <p class="product-meta">Comes with receipts</p>
+          <div class="price-row">
+            <span class="old-price">$19.99</span>
+            <span class="new-price">$14.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/7sYcN4fzW76s29t5aZ0gw09" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Cologne Supplier">Details</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-product="electronics_r">
+        <div class="image-wrap">
+          <img src="3.png" alt="Electronics Supplier">
+        </div>
+        <div class="card-body">
+          <h3 class="product-title">Electronics Supplier</h3>
+          <p class="product-meta">Comes with receipts</p>
+          <div class="price-row">
+            <span class="old-price">$19.99</span>
+            <span class="new-price">$14.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/28EcN45Zm8awdSb32R0gw07" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Electronics Supplier">Details</a>
+        </div>
+      </div>
+
+<div class="product-card" data-product="pickleball">
+        <div class="image-wrap">
+          <img src="12.png" alt="Elite Shoe Supplier">
+        </div>
+        <div class="card-body">
+          <h3 class="product-title">Shoe Supplier</h3>
+          <p class="product-meta">Footwear Supplier</p>
+          <div class="price-row">
+            <span class="old-price">$19.99</span>
+            <span class="new-price">$14.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/00w8wO73q76s5lF0UJ0gw03" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Shoe Supplier">Details</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-product="glasses">
+        <div class="image-wrap">
+          <img src="8.png" alt="Elite Glasses Supplier">
+        </div>
+        <div class="card-body">
+          <h3 class="product-title">Elite Glasses Supplier</h3>
+          <p class="product-meta">Shades and frames</p>
+          <div class="price-row">
+            <span class="old-price">$19.99</span>
+            <span class="new-price">$5.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/5kQaEW87u76sbK346V0gw02" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Glasses Supplier">Details</a>
+        </div>
+      </div>
+
+      <div class="product-card" data-product="mask">
+        <div class="image-wrap">
+          <img src="9.png" alt="Elite Mask Supplier">
+        </div>
+        <div class="card-body">
+          <h3 class="product-title">Elite Mask Supplier</h3>
+          <p class="product-meta">Masks</p>
+          <div class="price-row">
+            <span class="old-price">$19.99</span>
+            <span class="new-price">$5.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/3cIaEW5Zm62o29t8nb0gw01" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Elite Mask Supplier">Details</a>
+        </div>
+      </div>
+
+      <div class="product-card center-row" data-product="playbook">
+        <div class="image-wrap">
+          <img src="1.png" alt="Reselling Playbook">
+        </div>
+        <div class="card-body">
+          <h3 class="product-title">Reselling Playbook</h3>
+          <p class="product-meta">Reselling Guide</p>
+          <div class="price-row">
+            <span class="old-price">$19.99</span>
+            <span class="new-price">$5.99</span>
+          </div>
+          <a class="btn btn-primary btn-full" href="https://buy.stripe.com/cNi4gy3Re3Ug7tN46V0gw00" target="_blank" rel="noopener" data-no-modal="true">Buy now</a>
+          <a class="btn btn-ghost btn-full details-btn" href="#" data-details="Reselling Playbook">Details</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="section-title-row">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <p class="section-sub section-sub-under">Digital delivery and access info</p>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item">
+        <summary>What does buying a supplier get me?</summary>
+        <div class="faq-body">By purchasing a supplier, you gain instant access to a trusted, reliable source that offers high-quality products at competitive prices. This enables you to buy products at a low cost and resell them for a profit.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How will I receive access after I purchase?</summary>
+        <div class="faq-body">Once your purchase is complete, the supplier's contact information, including their phone number, will be sent to you immediately via email. Additionally, it will be available on the order confirmation page for easy access.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long does the supplier take to ship?</summary>
+        <div class="faq-body">Shipping times typically range from 2 to 7 days, though some shipments may take longer. The average delivery time is about one week, but you can contact the supplier directly for a more accurate estimate based on their availability.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do your suppliers ship worldwide?</summary>
+        <div class="faq-body">Yes, the suppliers offer worldwide shipping, ensuring that no matter where you're located, you can easily access their products without limitations or geographical restrictions.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much do the suppliers charge for a product?</summary>
+        <div class="faq-body">The price of each product varies, typically ranging from $20 to $150 per item, depending on the supplier and product type. Some suppliers may offer more affordable options, while others may charge higher prices based on product quality.</div>
+      </details>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-left">Ymcsells Elite Suppliers</div>
+      <div class="footer-left">Digital products only</div>
+    </footer>
+  </div>
+</section>
+
+<div class="product-overlay" id="productOverlay" aria-hidden="true">
+  <div class="product-modal" role="dialog" aria-modal="true">
+    <button class="product-close" id="productClose" type="button" aria-label="Close">×</button>
+
+    <div class="product-shell">
+      <div class="product-left">
+        <div class="product-media">
+          <img id="pImg" src="" alt="">
+        </div>
+      </div>
+
+      <div class="product-right">
+        <div class="product-brand" id="pBrand">ymcsells</div>
+        <div class="product-title-big" id="pTitle">Title</div>
+
+        <div class="product-price-line">
+          <span class="product-old" id="pOld">$0.00</span>
+          <span class="product-new" id="pNew">$0.00</span>
+          <span class="product-sale" id="pSale" style="display:none;">Sale</span>
+        </div>
+
+        <div class="product-mini" id="pMini">Instant access • Digital only</div>
+
+        <div class="qty-row">
+          <div class="qty-label">Quantity</div>
+          <div class="qty-control">
+            <button class="qty-btn" id="qtyMinus" type="button">−</button>
+            <div class="qty-val" id="qtyVal">1</div>
+            <button class="qty-btn" id="qtyPlus" type="button">+</button>
+          </div>
+        </div>
+
+        <button class="btn btn-dark btn-full" id="addToCartBtn" type="button">Add to cart</button>
+        <a class="btn btn-primary btn-full" id="buyNowBtn" href="#">Buy now</a>
+
+        <div class="product-underbuy">
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text" id="pReviews">291 Five Star Reviews</span>
+          </div>
+
+          <div class="product-pill">
+            🔥 SAVE 50% — LIMITED TIME!
+          </div>
+        </div>
+
+        <div class="product-trust">
+          <div class="trust-item">✅ Instant Access — sent to your email immediately after purchase</div>
+          <div class="trust-item">✅ Verified Suppliers — trusted plugs for resellers</div>
+          <div class="trust-item">✅ Support — if you need help, you can reach out</div>
+        </div>
+
+        <div class="product-desc" id="pDesc">
+          Description goes here.
+        </div>
+
+        <div class="product-actions-bottom">
+          <button class="btn btn-ghost btn-full" id="productClose2" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<div class="mobile-cta">
+  <a class="mobile-cta-btn" href="#products">Get access</a>
+</div>
+
+</body>
+</html>
