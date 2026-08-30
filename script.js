@@ -107,7 +107,7 @@ const STRIPE_LINKS = {
   electronics_r: "https://buy.stripe.com/28EcN45Zm8awdSb32R0gw07",
   electronics_nr: "https://buy.stripe.com/28E7sKdrO0I4cO76f30gw06",
   golf: "https://buy.stripe.com/7sYfZg5ZmduQ01l0UJ0gw05",
-  shoe: "https://buy.stripe.com/fZu14m73q76s01lbzn0gw0e",
+  pickleball: "https://buy.stripe.com/fZu14m73q76s01lbzn0gw0e",
   glasses: "https://buy.stripe.com/5kQaEW87u76sbK346V0gw02",
   mask: "https://buy.stripe.com/3cIaEW5Zm62o29t8nb0gw01",
   playbook: "https://buy.stripe.com/cNi4gy3Re3Ug7tN46V0gw00"
